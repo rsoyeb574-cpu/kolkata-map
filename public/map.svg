@@ -1,0 +1,261 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200">
+  <defs>
+    <!-- Paper texture filter -->
+    <filter id="paperNoise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.05 0" in="noise" result="coloredNoise" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+
+    <!-- Base green hatch pattern for the scanned map (what's physically printed on the paper) -->
+    <pattern id="scanHatch" width="14" height="14" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#d1fae5" />
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#16a34a" stroke-width="2.5" />
+    </pattern>
+
+    <!-- Water hatch pattern -->
+    <pattern id="waterHatch" width="8" height="8" patternTransform="rotate(0 0 0)" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#e0f2fe" />
+      <line x1="0" y1="4" x2="8" y2="4" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="4 2" />
+    </pattern>
+  </defs>
+
+  <!-- Base Paper Background (Aged physical map scan) -->
+  <rect width="1600" height="1200" fill="#fbf8ee" />
+  
+  <!-- Subtle fold lines & aging stains on scanned physical map -->
+  <line x1="800" y1="0" x2="800" y2="1200" stroke="#d5cebe" stroke-width="2" stroke-dasharray="12 4" opacity="0.6" />
+  <line x1="0" y1="600" x2="1600" y2="600" stroke="#d5cebe" stroke-width="2" stroke-dasharray="12 4" opacity="0.6" />
+  <line x1="0" y1="300" x2="1600" y2="300" stroke="#e8e2d4" stroke-width="1" opacity="0.4" />
+  <line x1="0" y1="900" x2="1600" y2="900" stroke="#e8e2d4" stroke-width="1" opacity="0.4" />
+
+  <!-- Hooghly River (Western side) -->
+  <path d="M 0,0 L 160,0 C 180,240 130,500 170,800 C 190,950 140,1100 130,1200 L 0,1200 Z" fill="url(#waterHatch)" stroke="#7dd3fc" stroke-width="3" />
+  <text x="70" y="550" transform="rotate(-90 70 550)" font-family="serif" font-size="20" font-weight="bold" fill="#0369a1" letter-spacing="4">HOOGHLY RIVER (GANGA)</text>
+
+  <!-- Circular Canal / Bagbazar Canal (North) -->
+  <path d="M 160,110 C 400,90 800,80 1600,100" fill="none" stroke="#38bdf8" stroke-width="8" />
+  <text x="500" y="85" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0284c7">CIRCULAR CANAL</text>
+
+  <!-- Road Network (Grey/Beige outlines) -->
+  <!-- Major Arteries -->
+  <!-- 1. Central Ave / CR Avenue (Runs South-North) -->
+  <path d="M 520,1200 L 520,180" fill="none" stroke="#e2dcd2" stroke-width="26" />
+  <path d="M 520,1200 L 520,180" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" />
+
+  <!-- 2. College Street -> Bidhan Sarani (Parallel East) -->
+  <path d="M 850,1200 L 850,550 L 780,180" fill="none" stroke="#e2dcd2" stroke-width="24" />
+  <path d="M 850,1200 L 850,550 L 780,180" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" />
+
+  <!-- 3. Amherst Street / Raja Rammohan Roy Sarani -->
+  <path d="M 1120,1200 L 1120,380" fill="none" stroke="#e2dcd2" stroke-width="20" />
+  <path d="M 1120,1200 L 1120,380" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" />
+
+  <!-- 4. Acharya Prafulla Chandra (APC) Road -->
+  <path d="M 1400,1200 L 1400,150" fill="none" stroke="#e2dcd2" stroke-width="26" />
+  <path d="M 1400,1200 L 1400,150" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" />
+
+  <!-- 5. MG Road (Mahatma Gandhi Road - Major East-West) -->
+  <path d="M 150,720 L 1580,720" fill="none" stroke="#e2dcd2" stroke-width="28" />
+  <path d="M 150,720 L 1580,720" fill="none" stroke="#ffffff" stroke-width="20" stroke-linecap="round" />
+
+  <!-- 6. Vivekananda Road (East-West) -->
+  <path d="M 160,420 L 1580,420" fill="none" stroke="#e2dcd2" stroke-width="26" />
+  <path d="M 160,420 L 1580,420" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" />
+
+  <!-- 7. BB Ganguly Street / Bowbazar (South East-West) -->
+  <path d="M 220,1050 L 1580,1050" fill="none" stroke="#e2dcd2" stroke-width="24" />
+  <path d="M 220,1050 L 1580,1050" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" />
+
+  <!-- 8. Bagbazar Street (North East-West) -->
+  <path d="M 140,220 L 1200,220" fill="none" stroke="#e2dcd2" stroke-width="20" />
+  <path d="M 140,220 L 1200,220" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" />
+
+  <!-- Cross lanes and connecting alleys -->
+  <path d="M 520,860 L 850,860" fill="none" stroke="#ffffff" stroke-width="10" />
+  <path d="M 850,860 L 1120,860" fill="none" stroke="#ffffff" stroke-width="10" />
+  <path d="M 520,580 L 850,580" fill="none" stroke="#ffffff" stroke-width="10" />
+  <path d="M 850,580 L 1120,580" fill="none" stroke="#ffffff" stroke-width="10" />
+  <path d="M 780,320 L 1400,320" fill="none" stroke="#ffffff" stroke-width="12" />
+  <path d="M 260,180 L 520,350 L 780,350" fill="none" stroke="#ffffff" stroke-width="10" />
+
+  <!-- College Square Water Pond -->
+  <rect x="760" y="800" width="80" height="90" rx="6" fill="#bae6fd" stroke="#0284c7" stroke-width="2" />
+  <text x="800" y="850" font-family="sans-serif" font-size="10" font-weight="bold" fill="#0369a1" text-anchor="middle">COLLEGE SQ. TANK</text>
+
+  <!-- ============================================== -->
+  <!-- ORIGINAL PRINTED GREEN HATCHED PUJA ZONES     -->
+  <!-- Notice: They have old printed text underneath  -->
+  <!-- Our app will draw opaque covers over these!    -->
+  <!-- ============================================== -->
+
+  <!-- 1. College Square Zone (x: ~50-57%, y: ~66-74%) -> 800-910, 790-890 -->
+  <polygon points="860,780 960,780 970,870 870,870" fill="url(#scanHatch)" stroke="#15803d" stroke-width="2" />
+  <text x="915" y="830" font-family="sans-serif" font-size="11" font-weight="bold" fill="#14532d" text-anchor="middle">OLD PRINTED: COLLEGE SQ PUJA</text>
+
+  <!-- 2. Md. Ali Park Zone (x: ~30-38%, y: ~58-65%) -> 470-600, 690-770 -->
+  <polygon points="460,670 580,670 580,760 460,760" fill="url(#scanHatch)" stroke="#15803d" stroke-width="2" />
+  <text x="520" y="720" font-family="sans-serif" font-size="11" font-weight="bold" fill="#14532d" text-anchor="middle">OLD PRINTED: MD ALI PARK PUJA</text>
+
+  <!-- 3. Santosh Mitra Square Zone (x: ~62-71%, y: ~82-90%) -> 990-1130, 980-1080 -->
+  <polygon points="990,980 1130,980 1130,1080 990,1080" fill="url(#scanHatch)" stroke="#15803d" stroke-width="2" />
+  <text x="1060" y="1035" font-family="sans-serif" font-size="11" font-weight="bold" fill="#14532d" text-anchor="middle">OLD PRINTED: SANTOSH MITRA SQ</text>
+
+  <!-- 4. Chaltabagan Zone (x: ~72-81%, y: ~42-50%) -> 1150-1300, 500-600 -->
+  <polygon points="1150,500 1300,500 1300,600 1150,600" fill="url(#scanHatch)" stroke="#15803d" stroke-width="2" />
+  <text x="1225" y="555" font-family="sans-serif" font-size="11" font-weight="bold" fill="#14532d" text-anchor="middle">OLD PRINTED: CHALTABAGAN</text>
+
+  <!-- 5. Simla Vyayam Samiti Zone (x: ~36-45%, y: ~32-40%) -> 580-720, 380-470 -->
+  <polygon points="580,380 720,380 720,470 580,470" fill="url(#scanHatch)" stroke="#15803d" stroke-width="2" />
+  <text x="650" y="430" font-family="sans-serif" font-size="11" font-weight="bold" fill="#14532d" text-anchor="middle">OLD PRINTED: SIMLA VYAYAM</text>
+
+  <!-- 6. Bagbazar Sarbojanin Zone (x: ~14-23%, y: ~15-23%) -> 220-360, 180-270 -->
+  <polygon points="220,180 360,180 360,270 220,270" fill="url(#scanHatch)" stroke="#15803d" stroke-width="2" />
+  <text x="290" y="230" font-family="sans-serif" font-size="11" font-weight="bold" fill="#14532d" text-anchor="middle">OLD PRINTED: BAGBAZAR PUJA</text>
+
+  <!-- 7. Kumartuli Park Zone (x: ~24-33%, y: ~24-32%) -> 380-520, 280-370 -->
+  <polygon points="380,280 520,280 520,370 380,370" fill="url(#scanHatch)" stroke="#15803d" stroke-width="2" />
+  <text x="450" y="330" font-family="sans-serif" font-size="11" font-weight="bold" fill="#14532d" text-anchor="middle">OLD PRINTED: KUMARTULI PARK</text>
+
+  <!-- 8. Jagat Mukherjee Park Zone (x: ~46-55%, y: ~16-24%) -> 730-870, 190-280 -->
+  <polygon points="730,190 870,190 870,280 730,280" fill="url(#scanHatch)" stroke="#15803d" stroke-width="2" />
+  <text x="800" y="240" font-family="sans-serif" font-size="11" font-weight="bold" fill="#14532d" text-anchor="middle">OLD PRINTED: JAGAT MUKHERJEE</text>
+
+
+  <!-- ============================================== -->
+  <!-- YELLOW & BLACK ROAD NAME SIGNS (UNTOUCHED)     -->
+  <!-- ============================================== -->
+
+  <!-- MG Road Sign -->
+  <g transform="translate(870, 695)">
+    <rect x="0" y="0" width="220" height="28" rx="4" fill="#facc15" stroke="#000000" stroke-width="2.5" />
+    <text x="110" y="19" font-family="sans-serif" font-size="13" font-weight="900" fill="#000000" text-anchor="middle" letter-spacing="1">M. G. ROAD</text>
+  </g>
+
+  <!-- CR Avenue Sign -->
+  <g transform="translate(400, 930) rotate(-90)">
+    <rect x="0" y="0" width="260" height="26" rx="4" fill="#facc15" stroke="#000000" stroke-width="2.5" />
+    <text x="130" y="18" font-family="sans-serif" font-size="12" font-weight="900" fill="#000000" text-anchor="middle" letter-spacing="1">C. R. AVENUE (CENTRAL)</text>
+  </g>
+
+  <!-- College Street Sign -->
+  <g transform="translate(860, 1020) rotate(-90)">
+    <rect x="0" y="0" width="210" height="26" rx="4" fill="#facc15" stroke="#000000" stroke-width="2.5" />
+    <text x="105" y="18" font-family="sans-serif" font-size="12" font-weight="900" fill="#000000" text-anchor="middle" letter-spacing="1">COLLEGE STREET</text>
+  </g>
+
+  <!-- Bidhan Sarani Sign -->
+  <g transform="translate(790, 480) rotate(-90)">
+    <rect x="0" y="0" width="200" height="26" rx="4" fill="#facc15" stroke="#000000" stroke-width="2.5" />
+    <text x="100" y="18" font-family="sans-serif" font-size="12" font-weight="900" fill="#000000" text-anchor="middle" letter-spacing="1">BIDHAN SARANI</text>
+  </g>
+
+  <!-- Vivekananda Road Sign -->
+  <g transform="translate(840, 395)">
+    <rect x="0" y="0" width="230" height="28" rx="4" fill="#facc15" stroke="#000000" stroke-width="2.5" />
+    <text x="115" y="19" font-family="sans-serif" font-size="13" font-weight="900" fill="#000000" text-anchor="middle" letter-spacing="1">VIVEKANANDA ROAD</text>
+  </g>
+
+  <!-- Amherst Street Sign -->
+  <g transform="translate(1135, 820) rotate(-90)">
+    <rect x="0" y="0" width="240" height="24" rx="4" fill="#facc15" stroke="#000000" stroke-width="2" />
+    <text x="120" y="17" font-family="sans-serif" font-size="11" font-weight="900" fill="#000000" text-anchor="middle">AMHERST STREET</text>
+  </g>
+
+  <!-- Bowbazar Street Sign -->
+  <g transform="translate(560, 1025)">
+    <rect x="0" y="0" width="260" height="28" rx="4" fill="#facc15" stroke="#000000" stroke-width="2.5" />
+    <text x="130" y="19" font-family="sans-serif" font-size="13" font-weight="900" fill="#000000" text-anchor="middle" letter-spacing="1">B. B. GANGULY ST (BOWBAZAR)</text>
+  </g>
+
+  <!-- Bagbazar Street Sign -->
+  <g transform="translate(480, 195)">
+    <rect x="0" y="0" width="220" height="26" rx="4" fill="#facc15" stroke="#000000" stroke-width="2" />
+    <text x="110" y="18" font-family="sans-serif" font-size="12" font-weight="900" fill="#000000" text-anchor="middle">BAGBAZAR STREET</text>
+  </g>
+
+  <!-- APC Road Sign -->
+  <g transform="translate(1415, 680) rotate(-90)">
+    <rect x="0" y="0" width="230" height="26" rx="4" fill="#facc15" stroke="#000000" stroke-width="2" />
+    <text x="115" y="18" font-family="sans-serif" font-size="12" font-weight="900" fill="#000000" text-anchor="middle">A. P. C. ROAD</text>
+  </g>
+
+
+  <!-- ============================================== -->
+  <!-- PINK LINES & ROUTE ARROWS (KEEP UNTOUCHED)     -->
+  <!-- ============================================== -->
+
+  <!-- Pink Route 1: CR Avenue Northbound Flow -->
+  <path d="M 505,1160 L 505,250" fill="none" stroke="#ec4899" stroke-width="6" stroke-dasharray="14 8" />
+  <!-- Arrow heads along the route -->
+  <polygon points="505,820 495,845 515,845" fill="#ec4899" stroke="#be185d" stroke-width="1.5" />
+  <polygon points="505,530 495,555 515,555" fill="#ec4899" stroke="#be185d" stroke-width="1.5" />
+  <polygon points="505,300 495,325 515,325" fill="#ec4899" stroke="#be185d" stroke-width="1.5" />
+  <rect x="440" y="800" width="60" height="18" fill="#fdf2f8" stroke="#ec4899" rx="3" />
+  <text x="470" y="813" font-family="sans-serif" font-size="10" font-weight="bold" fill="#be185d" text-anchor="middle">ROUTE 1 ⬆</text>
+
+  <!-- Pink Route 2: MG Road Eastbound Flow -->
+  <path d="M 200,740 L 1500,740" fill="none" stroke="#ec4899" stroke-width="6" stroke-dasharray="14 8" />
+  <polygon points="680,740 655,730 655,750" fill="#ec4899" stroke="#be185d" stroke-width="1.5" />
+  <polygon points="1200,740 1175,730 1175,750" fill="#ec4899" stroke="#be185d" stroke-width="1.5" />
+  <rect x="660" y="750" width="90" height="18" fill="#fdf2f8" stroke="#ec4899" rx="3" />
+  <text x="705" y="763" font-family="sans-serif" font-size="10" font-weight="bold" fill="#be185d" text-anchor="middle">ONE WAY ➡</text>
+
+  <!-- Pink Route 3: College Street Southbound Flow -->
+  <path d="M 865,300 L 865,1160" fill="none" stroke="#ec4899" stroke-width="6" stroke-dasharray="14 8" />
+  <polygon points="865,650 855,625 875,625" fill="#ec4899" stroke="#be185d" stroke-width="1.5" />
+  <polygon points="865,950 855,925 875,925" fill="#ec4899" stroke="#be185d" stroke-width="1.5" />
+  <rect x="875" y="640" width="75" height="18" fill="#fdf2f8" stroke="#ec4899" rx="3" />
+  <text x="912" y="653" font-family="sans-serif" font-size="10" font-weight="bold" fill="#be185d" text-anchor="middle">EXIT ROUTE ⬇</text>
+
+  <!-- Pink Route 4: Vivekananda Road Westbound Flow -->
+  <path d="M 1500,440 L 250,440" fill="none" stroke="#ec4899" stroke-width="6" stroke-dasharray="14 8" />
+  <polygon points="500,440 525,430 525,450" fill="#ec4899" stroke="#be185d" stroke-width="1.5" />
+  <polygon points="1080,440 1105,430 1105,450" fill="#ec4899" stroke="#be185d" stroke-width="1.5" />
+  <rect x="460" y="450" width="85" height="18" fill="#fdf2f8" stroke="#ec4899" rx="3" />
+  <text x="502" y="463" font-family="sans-serif" font-size="10" font-weight="bold" fill="#be185d" text-anchor="middle">⬅ ONE WAY</text>
+
+  <!-- Pink Pedestrian Bypass Arrows around College Square -->
+  <path d="M 840,770 L 980,770 L 980,890 L 840,890" fill="none" stroke="#ec4899" stroke-width="3.5" stroke-dasharray="8 4" />
+  <polygon points="980,830 973,815 987,815" fill="#ec4899" />
+  <text x="910" y="763" font-family="sans-serif" font-size="9" font-weight="bold" fill="#be185d" text-anchor="middle">PEDESTRIAN CORRIDOR</text>
+
+
+  <!-- ============================================== -->
+  <!-- NORTH ARROW POINTING LEFT                      -->
+  <!-- (Matches the user prompt description exactly!) -->
+  <!-- ============================================== -->
+  <g transform="translate(110, 80)">
+    <!-- Compass Rose with North arrow pointing LEFT (270 deg / -90 deg) -->
+    <circle cx="0" cy="0" r="42" fill="#fef08a" stroke="#000000" stroke-width="2.5" />
+    <!-- Compass needle pointing LEFT towards (cx-35, 0) -->
+    <polygon points="-35,0 10,-9 2,0 10,9" fill="#dc2626" stroke="#991b1b" stroke-width="1" />
+    <polygon points="35,0 -10,-9 -2,0 -10,9" fill="#0f172a" stroke="#000000" stroke-width="1" />
+    <text x="-24" y="-7" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">N</text>
+    <text x="22" y="5" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0f172a">S</text>
+    <text x="-3" y="-22" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0f172a">E</text>
+    <text x="-4" y="28" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0f172a">W</text>
+    <text x="0" y="58" font-family="sans-serif" font-size="10" font-weight="bold" fill="#475569" text-anchor="middle">NORTH ◀</text>
+  </g>
+
+  <!-- Map Title Banner / Cartouche -->
+  <g transform="translate(1160, 60)">
+    <rect x="0" y="0" width="380" height="90" rx="8" fill="#fffbeb" stroke="#78350f" stroke-width="3" />
+    <text x="190" y="32" font-family="serif" font-size="20" font-weight="bold" fill="#78350f" text-anchor="middle">KOLKATA STREET GUIDE</text>
+    <text x="190" y="54" font-family="sans-serif" font-size="12" font-weight="bold" fill="#92400e" text-anchor="middle">DURGA PUJA FESTIVAL &amp; TRAFFIC CIRCULATION</text>
+    <text x="190" y="74" font-family="sans-serif" font-size="10" fill="#a16207" text-anchor="middle">NORTH &amp; CENTRAL DIVISION • OFFICIAL SCANNED BASE MAP</text>
+  </g>
+
+  <!-- Scale Bar & Legend -->
+  <g transform="translate(1220, 1120)">
+    <rect x="0" y="0" width="320" height="60" rx="6" fill="#fffbeb" stroke="#000000" stroke-width="1.5" />
+    <line x1="20" y1="40" x2="220" y2="40" stroke="#000000" stroke-width="3" />
+    <line x1="20" y1="35" x2="20" y2="45" stroke="#000000" stroke-width="3" />
+    <line x1="120" y1="35" x2="120" y2="45" stroke="#000000" stroke-width="3" />
+    <line x1="220" y1="35" x2="220" y2="45" stroke="#000000" stroke-width="3" />
+    <text x="20" y="30" font-family="sans-serif" font-size="10" fill="#000000">0</text>
+    <text x="110" y="30" font-family="sans-serif" font-size="10" fill="#000000">500 m</text>
+    <text x="210" y="30" font-family="sans-serif" font-size="10" fill="#000000">1 km</text>
+    <text x="270" y="38" font-family="sans-serif" font-size="10" font-weight="bold" fill="#15803d">■ PUJA ZONE</text>
+  </g>
+</svg>

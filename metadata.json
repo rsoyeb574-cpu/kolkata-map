@@ -1,0 +1,6 @@
+{
+  "name": "Kolkata Street Map - Durga Puja Viewer",
+  "description": "Interactive Kolkata street map highlighting Durga Puja pandals with custom SVG hatch overlays, outlined labels, and place details.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
